@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vocaloid World - Hatsune Miku</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1 class="logo">Vocaloid World</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="personajes.html">Personajes</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="slider">
+    <div class="slide fade">
+      <img src="https://i.imgur.com/5DByQO7.jpg" alt="Hatsune Miku">
+      <div class="caption">El fenómeno digital de la música</div>
+    </div>
+    <div class="slide fade">
+      <img src="https://i.imgur.com/Dp2OHlP.jpg" alt="Vocaloid concierto">
+      <div class="caption">Conciertos virtuales únicos</div>
+    </div>
+    <div class="slide fade">
+      <img src="https://i.imgur.com/9b1fR0X.jpg" alt="Vocaloid grupo">
+      <div class="caption">La comunidad Vocaloid</div>
+    </div>
+  </section>
+
+  <main>
+    <section class="info">
+      <article>
+        <img src="https://i.imgur.com/6Z7TZks.jpg" alt="Miku ilustración">
+        <div>
+          <h2>¿Quién es Hatsune Miku?</h2>
+          <p>
+            Hatsune Miku es una cantante virtual desarrollada por Crypton Future Media utilizando la tecnología Vocaloid. Su nombre significa “Primer Sonido del Futuro” y representa la unión entre la música, la tecnología y la creatividad de los fans.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section class="info reverse">
+      <article>
+        <div>
+          <h2>El fenómeno Vocaloid</h2>
+          <p>
+            Vocaloid no es solo software, es un movimiento cultural. Artistas de todo el mundo crean canciones, animaciones y conciertos protagonizados por personajes virtuales, llevando la música a nuevas dimensiones digitales.
+          </p>
+        </div>
+        <img src="https://i.imgur.com/pjTq2Mb.jpg" alt="Vocaloid concierto holográfico">
+      </article>
+    </section>
+  </main>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form>
+      <label for="nombre">Nombre y Apellido:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Desarrollado por: <strong>Tu Nombre - Cédula XXXXXXXX</strong></p>
+    <p>Universidad Bicentenaria de Aragua (UBA)</p>
+    <p>© 2025 Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    const showSlides = () => {
+      const slides = document.querySelectorAll(".slide");
+      slides.forEach(slide => slide.style.display = "none");
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 4000);
+    }
+    showSlides();
+  </script>
+</body>
+</html>
