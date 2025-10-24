@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Navbar -->
   <header>
     <nav>
       <h1 class="logo">Vocaloid World</h1>
@@ -20,25 +21,27 @@
     </nav>
   </header>
 
+  <!-- Slider -->
   <section id="slider">
     <div class="slide fade">
-      <img src="https://i.imgur.com/5DByQO7.jpg" alt="Hatsune Miku">
+      <img src="img/Miku1.jpg" alt="Hatsune Miku">
       <div class="caption">El fenómeno digital de la música</div>
     </div>
     <div class="slide fade">
-      <img src="https://i.imgur.com/Dp2OHlP.jpg" alt="Vocaloid concierto">
+      <img src="img/Miku2.jpg" alt="Vocaloid concierto">
       <div class="caption">Conciertos virtuales únicos</div>
     </div>
     <div class="slide fade">
-      <img src="https://i.imgur.com/9b1fR0X.jpg" alt="Vocaloid grupo">
+      <img src="img/Miku3.jpg" alt="Vocaloid grupo">
       <div class="caption">La comunidad Vocaloid</div>
     </div>
   </section>
 
+  <!-- Sección de información -->
   <main>
     <section class="info">
       <article>
-        <img src="https://i.imgur.com/6Z7TZks.jpg" alt="Miku ilustración">
+        <img src="img/Miku4.png" alt="Miku ilustración">
         <div>
           <h2>¿Quién es Hatsune Miku?</h2>
           <p>
@@ -56,11 +59,12 @@
             Vocaloid no es solo software, es un movimiento cultural. Artistas de todo el mundo crean canciones, animaciones y conciertos protagonizados por personajes virtuales, llevando la música a nuevas dimensiones digitales.
           </p>
         </div>
-        <img src="https://i.imgur.com/pjTq2Mb.jpg" alt="Vocaloid concierto holográfico">
+        <img src="img/Miku5.jpg" alt="Vocaloid concierto holográfico">
       </article>
     </section>
   </main>
 
+  <!-- Formulario de contacto -->
   <section id="contacto">
     <h2>Contacto</h2>
     <form>
@@ -77,13 +81,15 @@
     </form>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>Desarrollado por: <strong>Tu Nombre - Cédula XXXXXXXX</strong></p>
+    <p>Desarrollado por: <strong>Sebastián García - Cédula 29807311</strong></p>
     <p>Universidad Bicentenaria de Aragua (UBA)</p>
     <p>© 2025 Todos los derechos reservados</p>
   </footer>
 
   <script>
+    // Slider automático
     let slideIndex = 0;
     const showSlides = () => {
       const slides = document.querySelectorAll(".slide");
