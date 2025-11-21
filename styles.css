@@ -1,198 +1,299 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* ... (todo el CSS anterior se mantiene) ... */
 
-/* Smooth Scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #0A0A0A;
-  color: #F5FDFD;
-  padding-top: 80px; /* Compensación para el navbar fijo */
-}
-
-/* Navbar Fijo */
-header {
-  background-color: #1B7F79;
-  padding: 1rem 2rem;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.logo {
-  color: #F5FDFD;
-}
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-.nav-links a {
-  color: #F5FDFD;
-  text-decoration: none;
-  transition: color 0.3s;
-  padding: 5px 10px;
-  border-radius: 4px;
-}
-.nav-links a:hover {
-  color: #FF66CC;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Slider */
-#slider {
+/* Nueva sección: Eventos */
+.eventos-section {
+  padding: 3rem 2rem;
+  background: linear-gradient(to bottom, #0A0A0A, #1B3A3A, #0A0A0A);
+  text-align: center;
   position: relative;
-  max-width: 100%;
   overflow: hidden;
 }
-.slide {
-  display: none;
-  width: 100%;
-}
-.slide img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-}
-.caption {
-  position: absolute;
-  bottom: 20px;
-  left: 30px;
-  background: rgba(27, 127, 121, 0.8);
-  padding: 10px 20px;
-  border-radius: 8px;
-  color: #F5FDFD;
-}
 
-/* Secciones */
-section.info {
-  padding: 3rem 2rem;
-  background: #0A0A0A;
-}
-section.info article {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-section.info.reverse article {
-  flex-direction: row-reverse;
-}
-
-/* Efectos para imágenes */
-section.info img {
-  width: 45%;
-  border-radius: 15px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  border: 3px solid transparent;
-}
-section.info img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 20px rgba(57, 197, 187, 0.6);
-  border-color: #39C5BB;
-}
-
-/* Transiciones para títulos */
-section.info h2 {
+.eventos-section h2 {
   color: #39C5BB;
-  margin-bottom: 1rem;
-  transition: all 0.4s ease;
-  font-size: 2rem;
-}
-section.info h2:hover {
-  color: #FF66CC;
-  transform: scale(1.05);
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px rgba(57, 197, 187, 0.7);
+  animation: titleGlow 3s infinite alternate;
 }
 
-/* Efectos para galería */
-.galeria {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 2rem;
+@keyframes titleGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(57, 197, 187, 0.7);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(57, 197, 187, 1), 0 0 30px rgba(255, 102, 204, 0.5);
+  }
 }
-.galeria img {
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
+
+/* Escenario con animaciones */
+.stage-container {
+  position: relative;
+  margin: 2rem auto;
+  max-width: 800px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #1B7F79, #0A2A2A);
   border-radius: 10px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  border: 3px solid transparent;
-}
-.galeria img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(57, 197, 187, 0.6);
-  border-color: #39C5BB;
+  box-shadow: 0 0 30px rgba(27, 127, 121, 0.5);
+  overflow: hidden;
+  transform-style: preserve-3d;
 }
 
-/* Formulario */
-#contacto {
-  padding: 3rem 2rem;
-  background: #1B7F79;
-  text-align: center;
-}
-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-  margin: auto;
-  gap: 1rem;
-}
-input, textarea {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-}
-button {
-  background: #39C5BB;
-  border: none;
-  padding: 10px;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-button:hover {
-  background: #FF66CC;
+/* Luces del escenario */
+.stage-lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-/* Footer */
-footer {
-  background: #0A0A0A;
-  text-align: center;
-  padding: 1.5rem;
-  border-top: 2px solid #39C5BB;
+.light {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  filter: blur(15px);
+  animation: lightPulse 4s infinite alternate;
 }
-footer p {
+
+.light-1 {
+  top: 10%;
+  left: 10%;
+  background: rgba(255, 102, 204, 0.6);
+  animation-delay: 0s;
+}
+
+.light-2 {
+  top: 10%;
+  right: 10%;
+  background: rgba(57, 197, 187, 0.6);
+  animation-delay: 1s;
+}
+
+.light-3 {
+  bottom: 10%;
+  left: 20%;
+  background: rgba(255, 215, 0, 0.6);
+  animation-delay: 2s;
+}
+
+.light-4 {
+  bottom: 10%;
+  right: 20%;
+  background: rgba(138, 43, 226, 0.6);
+  animation-delay: 3s;
+}
+
+@keyframes lightPulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Spotlight central */
+.spotlight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  animation: spotlightMove 6s infinite alternate;
+  filter: blur(5px);
+}
+
+@keyframes spotlightMove {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-40%, -60%) scale(1.2);
+  }
+  100% {
+    transform: translate(-60%, -40%) scale(0.9);
+  }
+}
+
+/* Notas musicales flotantes */
+.floating-notes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.note {
+  position: absolute;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.8);
+  animation: floatNote 8s infinite linear;
+}
+
+.note:nth-child(1) {
+  top: 20%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.note:nth-child(2) {
+  top: 60%;
+  left: 80%;
+  animation-delay: 2s;
+}
+
+.note:nth-child(3) {
+  top: 80%;
+  left: 40%;
+  animation-delay: 4s;
+}
+
+.note:nth-child(4) {
+  top: 30%;
+  left: 70%;
+  animation-delay: 6s;
+}
+
+@keyframes floatNote {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Información del concierto */
+.concert-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  z-index: 10;
+}
+
+.concert-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #39C5BB;
+  animation: textPulse 2s infinite alternate;
+}
+
+@keyframes textPulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.concert-info p {
   margin: 0.3rem 0;
 }
 
-/* Estilos para la página de personajes */
-main.info ul {
-  list-style-type: none;
-  padding: 0;
+.date {
+  font-weight: bold;
+  color: #FF66CC;
+  font-size: 1.2rem;
 }
-main.info li {
+
+/* Lista de eventos */
+.event-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.event-card {
+  background: rgba(27, 127, 121, 0.2);
+  border: 1px solid #39C5BB;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 250px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.event-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.event-card:hover::before {
+  left: 100%;
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(57, 197, 187, 0.3);
+  border-color: #FF66CC;
+}
+
+.event-card h4 {
+  color: #39C5BB;
+  margin-bottom: 0.5rem;
+}
+
+.event-card p {
   margin-bottom: 1rem;
-  padding: 10px;
-  background-color: rgba(27, 127, 121, 0.2);
-  border-radius: 5px;
-  transition: background-color 0.3s;
 }
-main.info li:hover {
-  background-color: rgba(27, 127, 121, 0.4);
+
+.event-tag {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.event-tag.virtual {
+  background: rgba(57, 197, 187, 0.3);
+  color: #39C5BB;
+  border: 1px solid #39C5BB;
+}
+
+.event-tag.presencial {
+  background: rgba(255, 102, 204, 0.3);
+  color: #FF66CC;
+  border: 1px solid #FF66CC;
+}
+
+.event-tag.taller {
+  background: rgba(255, 215, 0, 0.3);
+  color: #FFD700;
+  border: 1px solid #FFD700;
 }
